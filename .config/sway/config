@@ -212,26 +212,30 @@ bindsym $mod+Shift+r mode "resize"
 
 # Window client color and transparency
 
-set $opacity E0
-set $background #2e3440
-set $color_urgent #bf616a
-set $text_color #eceff4
-set $unfocused_text_color #8b8b8b
-set $title_bg_unfocused #293a56
-set $title_outline_active #5e81ac
-set $title_outline_unfocused #9B9999
+    set $opacity E0
+    set $background #2e3440
+    set $color_urgent #bf616a
+    set $text_color #eceff4
+    set $unfocused_text_color #8b8b8b
+    set $title_bg_unfocused #293a56
+    set $title_outline_active #5e81ac
+    set $title_outline_unfocused #9B9999
 
 # Set Colors:           Border                   Background          Text                   Indicator             Child Border
-client.background       $background
-client.focused          $title_outline_active    $background$opacity $text_color            $title_outline_active $title_outline_active
-client.focused_inactive $title_outline_unfocused $background$opacity $unfocused_text_color  $text_color           $title_outline_unfocused
-client.unfocused        $title_outline_unfocused $title_bg_unfocused $unfocused_text_color  $title_outline_active
-client.urgent           $color_urgent            $color_urgent       $color_urgent          $color_urgent         $color_urgent
+    client.background       $background
+    client.focused          $title_outline_active    $background$opacity $text_color            $title_outline_active $title_outline_active
+    client.focused_inactive $title_outline_unfocused $background$opacity $unfocused_text_color  $text_color           $title_outline_unfocused
+    client.unfocused        $title_outline_unfocused $title_bg_unfocused $unfocused_text_color  $title_outline_active
+    client.urgent           $color_urgent            $color_urgent       $color_urgent          $color_urgent         $color_urgent
 
-# Include configs from 3 locations:
-#  - /usr/share/sway/config.d
-#  - /etc/sway/config.d
-#  - $XDG_CONFIG_HOME/sway/config.d ($HOME/.config/sway/config.d)
+#Waybar
+ exec_always ~/.config/waybar/launch.sh
+
+
+#Include configs from 3 locations:
+#   - /usr/share/sway/config.d
+#   - /etc/sway/config.d
+#   - $XDG_CONFIG_HOME/sway/config.d ($HOME/.config/sway/config.d)
 #
 # If multiple directories contain the files with the same name, the later
 # directory takes precedence; `$XDG_CONFIG_HOME/sway/config.d/20-swayidle.conf`
